@@ -30,7 +30,10 @@ export default function PhoneLink({ icon, phones }: Props) {
       <div className={`phones__list ${isOpen ? 'opend' : ''}`}>
         {phones.map(phone => (
           <Link key={phone.phone} className="phone" href={`tel: ${phone.phone}`}>
-            {`${phone.name} ${phone.phone}`}
+            <div className="phone-content">
+              <div className="phone-name">{phone.name}</div>
+              <div className="phone-number">{phone.phone}</div>
+            </div>
           </Link>
         ))}
       </div>
